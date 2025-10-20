@@ -11,7 +11,7 @@ export const CharacterTable = () => {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [page, setPage] = useState(1);
   const [totalRecords, setTotalRecords] = useState(0);
-  const [sortField, setSortField] = useState<string | null>(null);
+  const [sortField, setSortField] = useState<string | undefined>();
   const [sortOrder, setSortOrder] = useState<1 | -1 | 0>(0);
   const [isDialogVisible, setIsDialogVisible] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -100,7 +100,6 @@ export const CharacterTable = () => {
           stripedRows
           paginator
           lazy
-          first={(page - 1) * ROWS_PER_PAGE}
           rows={ROWS_PER_PAGE}
           totalRecords={totalRecords}
           onPage={onPageChange}
@@ -108,8 +107,8 @@ export const CharacterTable = () => {
           scrollHeight="700px"
           tableStyle={{ minWidth: "50rem" }}
           onSort={onSort}
-          sortField={sortField || undefined}
-          sortOrder={sortOrder || undefined}
+          sortField={sortField}
+          sortOrder={sortOrder}
           sortMode="single"
           emptyMessage="No characters available"
           loading={isLoading}
