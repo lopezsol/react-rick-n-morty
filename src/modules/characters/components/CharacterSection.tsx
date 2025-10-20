@@ -2,9 +2,9 @@ import { CharacterTable } from "./CharacterTable";
 
 export const CharacterSection = () => {
   return (
-    <div>
+    <section className="mt-6">
       <h2>Characters</h2>
       <CharacterTable />
-    </div>
+    </section>
   );
 };
