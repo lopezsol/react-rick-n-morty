@@ -83,7 +83,7 @@ export const CharacterDialog = ({ visible, character, handleHide }: Props) => {
 
       <ul>
         {episodes.map((ep) => (
-          <li key={ep.id}>
+          <li key={`${ep.episode} —${ep.name}-'${ep.id}`}>
             {ep.episode} — {ep.name}
           </li>
         ))}
