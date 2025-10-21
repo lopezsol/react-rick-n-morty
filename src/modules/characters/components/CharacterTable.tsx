@@ -38,7 +38,7 @@ export const CharacterTable = () => {
   }, [page]);
 
   const onPageChange = (event: DataTableStateEvent) => {
-    const newPage = (event.page || 0) + 1;
+    const newPage = (event.page ?? 0) + 1;
     setPage(newPage);
   };
 

@@ -1,12 +1,14 @@
 import type { Location } from "./location.interface";
 
+type Status = "Alive" | "Dead" | "unknown";
+type Gender = "Female" | "Male" | "Genderless" | "unknown";
 export interface Character {
     id: number;
     name: string;
-    status: "Alive" | "Dead" | "unknown";
+    status: Status
     species: string;
     type: string;
-    gender: "Female" | "Male" | "Genderless" | "unknown";
+    gender: Gender;
     origin: Location;
     location: Location;
     image: string;
